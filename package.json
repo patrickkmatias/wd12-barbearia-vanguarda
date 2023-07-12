@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
   "dependencies": {
     "lit": "^2.7.6"
   },
