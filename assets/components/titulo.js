@@ -13,11 +13,17 @@ export class Titulo extends LitElement {
         font-weight: 700;
         line-height: 100%; /* 48px */
       }
+
+      ::slotted(*) {
+        font-size: inherit;
+        margin: 0;
+      }
+
     `,
   ];
 
   render() {
-    return html`Título`;
+    return html`<slot>Título</slot>`;
   }
 }
 customElements.define("app-titulo", Titulo);
