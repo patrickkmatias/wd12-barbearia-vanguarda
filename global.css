@@ -10,5 +10,8 @@
 }
 
 body {
+    width: 100%;
+    height: 100svh; /* Smallest View Height */
+    margin: 0;
     background-color: var(--tom-1);
 }
