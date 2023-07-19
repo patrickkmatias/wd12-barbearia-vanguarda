@@ -62,7 +62,7 @@ export class ABarbeariaSection extends LitElement {
         top: 72px;
         z-index: -20;
 
-        background-color: var(--tom-3);
+        --cor-bolinhas: var(--tom-3);
       }
 
       img {

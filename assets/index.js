@@ -9,6 +9,7 @@ export * from './components/bolinhas'
 // Seções
 export * from './sections/hero-section'
 export * from './sections/a-barbearia-section'
+export * from './sections/servicos-section'
 
 // Páginas
 export * from './pages/home-page'
