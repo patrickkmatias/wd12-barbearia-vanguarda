@@ -6,6 +6,8 @@ export * from './components/paragrafo'
 export * from './components/botao'
 export * from './components/bolinhas'
 export * from './components/mapa'
+export * from './components/rodape'
+export * from './components/navbar'
 
 // Seções
 export * from './sections/hero-section'
