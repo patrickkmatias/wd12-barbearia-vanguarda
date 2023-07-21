@@ -7,10 +7,12 @@ export class Botao extends LitElement {
         display: block;
       }
 
+      ::slotted(button),
+      ::slotted(a),
       button {
         width: inherit;
 
-        display: inline-flex;
+        display: flex;
         padding: 5px 24px;
         border: 0;
         justify-content: flex-start;
@@ -35,32 +37,19 @@ export class Botao extends LitElement {
         font-weight: 700;
         line-height: normal;
         white-space: nowrap;
+        text-decoration: none;
 
         transition: all 200ms;
         cursor: pointer;
-      }
-
-      button:hover,
-      button:active {
-        background-color: color-mix(
-          in srgb,
-          white 15%,
-          var(--button-background, var(--tom-2))
-        );
-        color: var(--tom-1)
-      }
-
-      ::slotted(*) {
-        width: 24px;
-        height: 24px;
-        margin: 5px 8px 5px 0;
       }
     `,
   ];
 
   render() {
     return html`
-      <button><slot name="icone"></slot> <slot> Pressione </slot></button>
+      <slot>
+        <button>Pressione</button>
+      </slot>
     `;
   }
 }
