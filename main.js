@@ -1,10 +1,28 @@
-import './assets'
+import "./assets";
+import { initRouter } from "./assets/router";
 
 let navbar;
+let dialog;
+let router;
 
-document.addEventListener('DOMContentLoaded', function() {
-    navbar = document.querySelector("app-navbar")
-})
+document.addEventListener("DOMContentLoaded", function () {
+  router = initRouter();
+
+  navbar = document.querySelector("app-navbar");
+
+  dialog = document
+    .querySelector("menu-section")
+    .shadowRoot.querySelector("dialog");
+});
+
+export const nav = {
+  abrir: function () {
+    dialog.showModal();
+  },
+  fechar: function () {
+    dialog.close();
+  },
+};
 
 /* Navbar dinâmica ao scroll */
 let prevScrollpos = window.pageYOffset;
