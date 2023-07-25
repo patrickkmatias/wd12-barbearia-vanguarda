@@ -116,6 +116,20 @@ export class ServicosSection extends LitElement {
           padding: 176px 0px 16px 0px;
         }
       }
+
+      @media (min-width: 1024px) {
+        app-quadro {
+          height: 420px;
+        }
+
+        aside {
+          padding: 116px 0px 16px;
+        }
+
+        div {
+          display: none
+        }
+      }
     `,
   ];
 
