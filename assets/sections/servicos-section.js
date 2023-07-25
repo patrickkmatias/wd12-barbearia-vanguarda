@@ -68,6 +68,7 @@ export class ServicosSection extends LitElement {
 
       .descricao {
         width: 108px;
+        text-align: center;
         font-size: 0.875rem;
       }
 
@@ -80,6 +81,40 @@ export class ServicosSection extends LitElement {
         height: 320px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+      }
+
+      @media (min-width: 768px) {
+        :host {
+          padding: 3rem 0;
+        }
+
+        section {
+          align-self: center;
+        }
+
+        app-quadro {
+          width: 265px;
+          height: 520px;
+          border-radius: 8px;
+        }
+
+        .titulo {
+          width: 330px;
+          font-size: 1.25rem;
+        }
+
+        article app-paragrafo:first-child {
+          font-size: 1.25rem;
+        }
+
+        .descricao {
+          width: 158px;
+          font-size: 1rem;
+        }
+
+        aside {
+          padding: 176px 0px 16px 0px;
+        }
       }
     `,
   ];

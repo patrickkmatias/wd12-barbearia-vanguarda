@@ -6,8 +6,9 @@ export class Quadro extends LitElement {
     css`
       :host {
         display: flex;
-        width: 334px;
-        height: 260px;
+        width: 93vw;
+        max-width: 768px;
+        height: auto;
         justify-content: center;
         align-items: center;
 
@@ -15,7 +16,16 @@ export class Quadro extends LitElement {
         background: #d9d9d9;
         box-shadow: 0px 24px 34px 0px rgba(0, 0, 0, 0.25);
 
+        aspect-ratio: 167 / 130;
         overflow: hidden;
+      }
+
+      @media (min-width: 1024px) {
+
+        :host {
+          aspect-ratio: 167 / 112;
+        }
+        
       }
     `,
   ];
