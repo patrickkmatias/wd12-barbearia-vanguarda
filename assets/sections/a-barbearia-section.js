@@ -80,7 +80,7 @@ export class ABarbeariaSection extends LitElement {
       <app-titulo>A Barbearia</app-titulo>
       <app-bolinhas></app-bolinhas>
       <app-quadro>
-        <img src="a-barbearia.jpg" alt="Imagem seção A Barbearia">
+        <img loading="lazy" src="a-barbearia.jpg" alt="Imagem seção A Barbearia">
       </app-quadro>
       <article>
         <app-paragrafo>

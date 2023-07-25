@@ -52,7 +52,7 @@ export class ContatoSection extends LitElement {
       <app-titulo>Entre em contato conosco</app-titulo>
 
       <app-quadro>
-        <img src="thumb-contato.png" alt="Thumbnail do vídeo de contato" />
+        <img loading="lazy" src="thumb-contato.png" alt="Thumbnail do vídeo de contato" />
       </app-quadro>
 
       <div>
