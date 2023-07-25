@@ -23,6 +23,7 @@ export class HeroSection extends LitElement {
         align-self: stretch;
 
         position: relative;
+        z-index: 10;
       }
 
       app-logo {
@@ -41,6 +42,15 @@ export class HeroSection extends LitElement {
 
       app-paragrafo {
         font-size: 1.25rem;
+      }
+
+      swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      app-quadro {
+        background-color: transparent;
       }
 
       @media (min-width: 768px) {
@@ -69,7 +79,29 @@ export class HeroSection extends LitElement {
           <app-logo></app-logo>
         </app-titulo>
         <app-quadro>
-          <img loading="lazy" src="slider-1.jpg" alt="Imagem slider 1" />
+          <swiper-container
+            effect="coverflow"
+            grab-cursor="true"
+            centered-slides="true"
+            slides-per-view="auto"
+            coverflow-effect-rotate="50"
+            coverflow-effect-stretch="0"
+            coverflow-effect-depth="100"
+            coverflow-effect-modifier="1"
+            coverflow-effect-slide-shadows="true"
+            autoplay="true"
+            autoplay-disable-on-interaction="false"
+          >
+            <swiper-slide>
+              <img loading="lazy" src="slider-1.jpg" alt="Imagem slider 1" />
+            </swiper-slide>
+            <swiper-slide>
+              <img loading="lazy" src="slider-2.jpg" alt="Imagem slider 2" />
+            </swiper-slide>
+            <swiper-slide>
+              <img loading="lazy" src="slider-3.jpg" alt="Imagem slider 3" />
+            </swiper-slide>
+          </swiper-container>
         </app-quadro>
       </section>
       <app-paragrafo>
