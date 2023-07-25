@@ -8,7 +8,7 @@ export class UnidadesSections extends LitElement {
       :host {
         height: fit-content;
         gap: 32px;
-        padding-bottom: 4rem;
+        padding: 2rem 0 0 0;
       }
 
       app-paragrafo {
@@ -28,6 +28,22 @@ export class UnidadesSections extends LitElement {
         left: -64px;
         top: -56px;
         z-index: -10;
+      }
+
+      swiper-container {
+        width: 100vw;
+        height: 320px;
+      }
+
+      swiper-slide {
+        display: flex;
+        justify-content: center;
+        padding-top: 2rem;
+        transition: transform 1s;
+      }
+
+      .swiper-slide-active {
+        transform: scale(1.2);
       }
 
       @media (min-width: 768px) {
@@ -54,7 +70,38 @@ export class UnidadesSections extends LitElement {
         Confira os horários específicos de cada unidade.
       </app-paragrafo>
 
-      <app-mapa></app-mapa>
+      <swiper-container loop="true" space-between="-60">
+        <swiper-slide>
+          <app-mapa></app-mapa>
+        </swiper-slide>
+        <swiper-slide>
+          <app-mapa>
+            <img
+              slot="imagem"
+              src="mapa-2.jpg"
+              alt="Imagem da unidade Barbearia Vanguarda 2"
+            />
+          </app-mapa>
+        </swiper-slide>
+        <swiper-slide>
+          <app-mapa>
+            <img
+              slot="imagem"
+              src="mapa-3.jpg"
+              alt="Imagem da unidade Barbearia Vanguarda 3"
+            />
+          </app-mapa>
+        </swiper-slide>
+        <swiper-slide>
+          <app-mapa>
+            <img
+              slot="imagem"
+              src="mapa-4.jpg"
+              alt="Imagem da unidade Barbearia Vanguarda 4"
+            />
+          </app-mapa>
+        </swiper-slide>
+      </swiper-container>
 
       <app-bolinhas formato="metade"></app-bolinhas>
     `;

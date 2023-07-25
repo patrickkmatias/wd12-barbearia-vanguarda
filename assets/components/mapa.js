@@ -10,7 +10,7 @@ export class Mapa extends LitElement {
       :host {
         /* Layout */
         display: flex;
-        width: 270px;
+        width: 260px;
         height: 200px;
         flex-direction: column;
         align-items: flex-start;
