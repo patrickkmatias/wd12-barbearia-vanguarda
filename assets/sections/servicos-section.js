@@ -83,6 +83,17 @@ export class ServicosSection extends LitElement {
         border-bottom-left-radius: 0;
       }
 
+      swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
       @media (min-width: 768px) {
         :host {
           padding: 3rem 0;
@@ -127,7 +138,7 @@ export class ServicosSection extends LitElement {
         }
 
         div {
-          display: none
+          display: none;
         }
       }
     `,
@@ -141,7 +152,35 @@ export class ServicosSection extends LitElement {
 
       <section>
         <app-quadro>
-          <img loading="lazy" src="servicos-1.jpg" alt="Imagem serviços 1" />
+          <swiper-container
+            space-between="30"
+            effect="fade"
+            loop="true"
+            autoplay="true"
+            autoplay-disable-on-interaction="false"
+          >
+            <swiper-slide>
+              <img
+                loading="lazy"
+                src="servicos-1.jpg"
+                alt="Imagem serviços 1"
+              />
+            </swiper-slide>
+            <swiper-slide>
+              <img
+                loading="lazy"
+                src="servicos-2.jpg"
+                alt="Imagem serviços 2"
+              />
+            </swiper-slide>
+            <swiper-slide>
+              <img
+                loading="lazy"
+                src="servicos-3.jpg"
+                alt="Imagem serviços 3"
+              />
+            </swiper-slide>
+          </swiper-container>
         </app-quadro>
 
         <aside>
