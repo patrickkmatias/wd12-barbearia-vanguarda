@@ -85,7 +85,7 @@ export class ABarbeariaSection extends LitElement {
         app-bolinhas {
           width: 400px;
           height: 400px;
-          
+
           left: -20px;
           top: 272px;
         }
@@ -96,6 +96,11 @@ export class ABarbeariaSection extends LitElement {
 
         article {
           width: 60%;
+          border-image-source: linear-gradient(
+            42deg,
+            rgba(102, 78, 56, 0) 60%,
+            rgba(102, 78, 56, 1) 100%
+          );
         }
       }
 
@@ -110,6 +115,12 @@ export class ABarbeariaSection extends LitElement {
 
         article {
           width: 70%;
+
+          border-image-source: linear-gradient(
+            20deg,
+            rgba(102, 78, 56, 0) 60%,
+            rgba(102, 78, 56, 1) 100%
+          );
         }
       }
     `,
