@@ -51,7 +51,7 @@ export class MenuSection extends LitElement {
         background-color: white;
       }
 
-      a {
+      a, button {
         /* Layout */
         display: flex;
         justify-content: center;
@@ -66,6 +66,9 @@ export class MenuSection extends LitElement {
         font-weight: 500;
         line-height: normal;
         text-decoration: none;
+
+        transition: color 300ms;
+        cursor: pointer;
       }
 
       button {
@@ -74,15 +77,32 @@ export class MenuSection extends LitElement {
         background: transparent;
       }
 
+      a:hover, button:hover {
+        color: var(--tom-1);
+      }
+
+      a:active, button:active {
+        color: var(--cor-primaria);
+      }
+
       svg,
       feather-icon {
         display: flex;
         width: 24px;
-        fill: white;
-        color: white;
+        fill: currentColor;
       }
     `,
   ];
+
+  
+  rolarUnidades() {
+    return nav.rolarPara('#unidades')
+  }
+
+  rolarContato() {
+    return nav.rolarPara('#contato')
+  }
+
 
   render() {
     return html`
@@ -90,12 +110,12 @@ export class MenuSection extends LitElement {
         <app-logo></app-logo>
 
         <nav>
-          <a href="">Unidades <feather-icon icon="map-pin"></feather-icon></a>
-          <a href="">Contato <feather-icon icon="phone"></feather-icon></a>
-          <a href="servicos"
+          <button @click=${this.rolarUnidades}>Unidades <feather-icon icon="map-pin"></feather-icon></button>
+          <button @click=${this.rolarContato}>Contato <feather-icon icon="phone"></feather-icon></button>
+          <a @click=${nav.fechar} href="servicos"
             >Serviços <feather-icon icon="scissors"></feather-icon
           ></a>
-          <a href="a-barbearia"
+          <a @click=${nav.fechar} href="a-barbearia"
             >A Barbearia
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 23">
