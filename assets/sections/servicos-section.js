@@ -116,6 +116,12 @@ export class ServicosSection extends LitElement {
           padding: 176px 0px 16px 0px;
         }
       }
+
+      @media (min-width: 1024px) {
+        div {
+          display: none;
+        }
+      }
     `,
   ];
 
