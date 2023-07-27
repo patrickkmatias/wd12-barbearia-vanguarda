@@ -1,18 +1,19 @@
 import { LitElement, html, css } from "lit";
+import { animate } from "../styles/animate-style";
 import { section } from "../styles/section-style";
 
 export class HeroSection extends LitElement {
   static styles = [
+    animate,
     section,
     css`
       section {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
       }
 
-      span {
+      .vanguarda {
         color: var(--tom-3);
         font-weight: 900;
       }
@@ -21,9 +22,13 @@ export class HeroSection extends LitElement {
         display: flex;
         align-items: center;
         align-self: stretch;
-
         position: relative;
         z-index: 10;
+      }
+
+      h1 {
+        overflow: hidden;
+        padding-bottom: 0.5rem;
       }
 
       app-logo {
@@ -47,6 +52,22 @@ export class HeroSection extends LitElement {
       swiper-container {
         width: 100%;
         height: 100%;
+      }
+
+      .animate__animated {
+        display: inline-block;
+        --animate-delay: 0.3s;
+      }
+
+      @keyframes slideInUp {
+        0% {
+          transform: translate3d(0px, 200%, 0px);
+          visibility: visible;
+        }
+
+        100% {
+          transform: translate3d(0px, 0px, 0px);
+        }
       }
 
       app-quadro {
@@ -73,8 +94,12 @@ export class HeroSection extends LitElement {
       <section>
         <app-titulo>
           <h1>
-            Barbearia <br />
-            <span>Vanguarda</span>
+            <span class="animate__animated animate__slideInUp animate__fast">Barbearia</span>
+            <br />
+            <span
+              class="vanguarda animate__animated animate__slideInUp animate__fast animate__delay-1s"
+              >Vanguarda</span
+            >
           </h1>
           <app-logo></app-logo>
         </app-titulo>
@@ -104,7 +129,7 @@ export class HeroSection extends LitElement {
           </swiper-container>
         </app-quadro>
       </section>
-      <app-paragrafo>
+      <app-paragrafo class="animate__animated animate__fadeIn animate__delay-5s">
         Obtenha um estilo impecável, do cabelo à barba.
       </app-paragrafo>
     `;
