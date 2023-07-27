@@ -59,6 +59,10 @@ export class HeroSection extends LitElement {
         --animate-delay: 0.3s;
       }
 
+      .animate__animated.animate__slideInUp {
+        opacity: 1;
+      }
+
       @keyframes slideInUp {
         0% {
           transform: translate3d(0px, 200%, 0px);

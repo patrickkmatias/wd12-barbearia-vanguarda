@@ -29,6 +29,10 @@ export const section = css`
     color: var(--tom-1);
   }
 
+  .animate__animated {
+    opacity: 0
+  }
+  
   @media (min-width: 768px) {
     :host {
       padding: 3rem;
