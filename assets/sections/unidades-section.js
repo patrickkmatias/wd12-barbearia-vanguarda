@@ -1,6 +1,5 @@
 import { LitElement, html, css } from "lit";
 import { section } from "../styles/section-style";
-import { createRef, ref } from "lit/directives/ref.js";
 
 export class UnidadesSections extends LitElement {
   static styles = [
@@ -69,10 +68,8 @@ export class UnidadesSections extends LitElement {
     `,
   ];
 
-  swiperRef = createRef();
-
   firstUpdated() {
-    const swiper = this.swiperRef.value;
+    const swiper = this.renderRoot.querySelector('swiper-container');
 
     Object.assign(swiper, {
       rewind: true,
@@ -106,7 +103,7 @@ export class UnidadesSections extends LitElement {
         Confira os horários específicos de cada unidade.
       </app-paragrafo>
 
-      <swiper-container ${ref(this.swiperRef)} init="false">
+      <swiper-container init="false">
         <swiper-slide>
           <app-mapa></app-mapa>
         </swiper-slide>
