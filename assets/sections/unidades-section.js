@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { section } from "../styles/section-style";
+import { createRef, ref } from "lit/directives/ref.js";
 
 export class UnidadesSections extends LitElement {
   static styles = [
@@ -32,13 +33,16 @@ export class UnidadesSections extends LitElement {
 
       swiper-container {
         width: 100vw;
-        height: 320px;
+
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%)
       }
 
       swiper-slide {
         display: flex;
         justify-content: center;
-        padding-top: 2rem;
+        padding: 2rem 0 6rem 0;
         transition: transform 1s;
       }
 
@@ -57,9 +61,41 @@ export class UnidadesSections extends LitElement {
           width: 400px;
           height: 300px;
         }
+
+        swiper-slide {
+          padding: 3rem 0 6rem 0;
+        }
       }
     `,
   ];
+
+  swiperRef = createRef();
+
+  firstUpdated() {
+    const swiper = this.swiperRef.value;
+
+    Object.assign(swiper, {
+      rewind: true,
+      spaceBetween: -60,
+      initialSlide: 1,
+      autoHeight: true,
+      autoplay: false,
+      breakpoints: {
+        768: {
+          spaceBetween: -300,
+        },
+        1024: {
+          spaceBetween: -550,
+        },
+        1368: {
+          spaceBetween: 0,
+          slidesPerView: 3,
+          centeredSlides: true,
+        },
+      },
+    });
+    swiper.initialize();
+  }
 
   render() {
     return html`
@@ -70,7 +106,7 @@ export class UnidadesSections extends LitElement {
         Confira os horários específicos de cada unidade.
       </app-paragrafo>
 
-      <swiper-container loop="true" space-between="-60">
+      <swiper-container ${ref(this.swiperRef)} init="false">
         <swiper-slide>
           <app-mapa></app-mapa>
         </swiper-slide>
