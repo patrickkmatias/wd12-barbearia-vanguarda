@@ -5,7 +5,15 @@ export const animate = [
     :host {
       --animate-duration: 1s;
       --animate-delay: 1s;
-      --animate-repeat: 1;
+      --animate-repeat: 1s;
+    }
+
+    .animate__animated {
+      opacity: 0;
+    }
+
+    [class*="animate__animated"][class*="animate__"] {
+      opacity: 1;
     }
   `,
   unsafeCSS(animations),

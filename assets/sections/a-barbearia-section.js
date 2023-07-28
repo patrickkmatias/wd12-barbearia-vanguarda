@@ -78,7 +78,6 @@ export class ABarbeariaSection extends LitElement {
       .animate__animated.animate__slideInRight,
       .animate__animated.animate__slideInLeft {
         --animate-duration: 1.5s;
-        opacity: 1;
       }
 
       @media (min-width: 768px) {
