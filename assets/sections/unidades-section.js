@@ -31,8 +31,13 @@ export class UnidadesSections extends LitElement {
       }
 
       swiper-container {
-        width: 100%;
+        width: 100svw;
         height: 300px;
+
+        /* Centralizar a div */
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       swiper-slide {
@@ -57,9 +62,45 @@ export class UnidadesSections extends LitElement {
           width: 400px;
           height: 300px;
         }
+
+        swiper-container {
+          height: 400px
+        }
       }
     `,
   ];
+
+
+  
+
+  firstUpdated() {
+    const swiper = this.renderRoot.querySelector('swiper-container')
+
+    console.log(swiper)
+
+    Object.assign(swiper, {
+      spaceBetween: -75,
+      initialSlide: 1,
+      rewind: true,
+      breakpoints: {
+        768: {
+          spaceBetween: -275
+        },
+        1024: {
+          spaceBetween: -575
+        },
+        1368: {
+          slidesPerView: 3,
+          centeredSlides: true,
+          spaceBetween: 0,
+        },
+      }
+    })
+
+    swiper.initialize()
+  }
+
+
 
   render() {
     return html`
@@ -69,19 +110,24 @@ export class UnidadesSections extends LitElement {
         <br />
         Confira os horários específicos de cada unidade.
       </app-paragrafo>
-
-      <swiper-container space-between="-75">
+      <swiper-container init="false">
         <swiper-slide>
           <app-mapa></app-mapa>
         </swiper-slide>
         <swiper-slide>
-          <app-mapa></app-mapa>
+          <app-mapa>
+            <img slot="imagem" loading="lazy" src="mapa-2.jpg" alt="Imagem do local da Barbearia Vanguarda 2">
+          </app-mapa>
         </swiper-slide>
         <swiper-slide>
-          <app-mapa></app-mapa>
+          <app-mapa>
+            <img slot="imagem" loading="lazy" src="mapa-3.jpg" alt="Imagem do local da Barbearia Vanguarda 3">
+          </app-mapa>
         </swiper-slide>
         <swiper-slide>
-          <app-mapa></app-mapa>
+          <app-mapa>
+            <img slot="imagem" loading="lazy" src="mapa-4.jpg" alt="Imagem do local da Barbearia Vanguarda 4">
+          </app-mapa>
         </swiper-slide>
         <swiper-slide>
           <app-mapa></app-mapa>
