@@ -1,7 +1,9 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "prepreview": "npm run build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@vaadin/router": "^1.7.5",
