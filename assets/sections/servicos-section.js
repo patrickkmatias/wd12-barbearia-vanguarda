@@ -9,6 +9,7 @@ export class ServicosSection extends LitElement {
     css`
       :host {
         padding: 2rem 0;
+        --animate-delay: .5s;
       }
 
       app-bolinhas {
@@ -145,15 +146,15 @@ export class ServicosSection extends LitElement {
       }
     `,
   ];
-  
+
   render() {
     return html`
-      <app-paragrafo class="titulo animate__animated animate__fadeIn animate__delay-5s">
+      <app-paragrafo class="titulo animate__animated animate__delay-1s" data-toggle-class="animate__fadeIn">
         Estilo, cuidado e excelência em cada <span>corte</span>.
       </app-paragrafo>
 
       <section>
-        <app-quadro>
+        <app-quadro class="animate__animated" data-toggle-class="animate__fadeInLeft">
           <swiper-container
             space-between="30"
             effect="fade"
@@ -185,7 +186,7 @@ export class ServicosSection extends LitElement {
           </swiper-container>
         </app-quadro>
 
-        <aside>
+        <aside class="animate__animated animate__delay-2s" data-toggle-class="animate__fadeIn">
           <article>
             <app-paragrafo>Corte</app-paragrafo>
             <app-paragrafo class="descricao"
