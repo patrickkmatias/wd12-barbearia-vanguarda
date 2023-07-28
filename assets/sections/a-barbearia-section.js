@@ -134,12 +134,6 @@ export class ABarbeariaSection extends LitElement {
     `,
   ];
 
-  
-  firstUpdated() {
-    const observer = lozad(this.renderRoot.querySelectorAll('.animate__animated'))
-    observer.observe()
-  }
-
 
   render() {
     return html`

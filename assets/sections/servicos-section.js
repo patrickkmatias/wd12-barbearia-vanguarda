@@ -1,8 +1,10 @@
 import { LitElement, html, css } from "lit";
+import { animate } from "../styles/animate-style";
 import { section } from "../styles/section-style";
 
 export class ServicosSection extends LitElement {
   static styles = [
+    animate,
     section,
     css`
       :host {
@@ -143,10 +145,10 @@ export class ServicosSection extends LitElement {
       }
     `,
   ];
-
+  
   render() {
     return html`
-      <app-paragrafo class="titulo">
+      <app-paragrafo class="titulo animate__animated animate__fadeIn animate__delay-5s">
         Estilo, cuidado e excelência em cada <span>corte</span>.
       </app-paragrafo>
 

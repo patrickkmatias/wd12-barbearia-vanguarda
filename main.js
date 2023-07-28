@@ -1,12 +1,16 @@
 import "./assets";
 
-import { Router } from "@vaadin/router";
 import { initRouter } from "./assets/router";
+import { observarAnimacoes } from "./modules/observarAnimacoes";
+import { animarScrollNavbar } from "./modules/animarScrollNavbar";
+import { lazyLoadVideo } from "./modules/lazyLoadVideo";
+import { nav } from "./modules/navegacao";
 
 let navbar;
 let dialog;
 let router;
 
+/* Executar ao carregar página */
 document.addEventListener("DOMContentLoaded", function () {
   router = initRouter();
 
@@ -15,39 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
   dialog = document
     .querySelector("menu-section")
     .shadowRoot.querySelector("dialog");
+
+  router.ready.then(() => {
+    lazyLoadVideo()
+    observarAnimacoes();
+  });
 });
 
-export const nav = {
-  abrir: function () {
-    navbar.classList.add("escondido");
-    dialog.showModal();
-  },
-  rolarPara: function (secao) {
-    Router.go("/");
-    router.ready.then(() => {
-      document
-        .querySelector("home-page")
-        .shadowRoot.querySelector(secao)
-        .scrollIntoView();
-    });
+window.onscroll = animarScrollNavbar;
 
-    this.fechar()
-  },
-  fechar: function () {
-    dialog.close();
-  },
-};
-
-/* Navbar dinâmica ao scroll */
-let prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-  let currentScrollPos = window.pageYOffset;
-
-  if (prevScrollpos > currentScrollPos) {
-    navbar.classList.remove("escondido");
-  } else {
-    navbar.classList.add("escondido");
-  }
-
-  prevScrollpos = currentScrollPos;
-};
+export { nav, navbar, dialog, router };

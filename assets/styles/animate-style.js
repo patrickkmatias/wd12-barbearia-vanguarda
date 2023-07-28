@@ -1,6 +1,12 @@
-import animations from 'animate.css'
-
-const animate = new CSSStyleSheet()
-animate.replace(animations)
-
-export { animate }
+import { unsafeCSS, css } from "lit";
+import animations from "./animate.min.css?inline";
+export const animate = [
+  css`
+    :host {
+      --animate-duration: 1s;
+      --animate-delay: 1s;
+      --animate-repeat: 1;
+    }
+  `,
+  unsafeCSS(animations),
+];
