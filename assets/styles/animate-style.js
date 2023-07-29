@@ -12,7 +12,7 @@ export const animate = [
       opacity: 0;
     }
 
-    [class*="animate__animated"][class*="animate__"] {
+    .animate__animated[class*="animate__"] {
       opacity: 1;
     }
   `,
