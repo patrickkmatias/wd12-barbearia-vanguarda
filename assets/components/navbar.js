@@ -20,6 +20,7 @@ export class Navbar extends LitElement {
         mix-blend-mode: difference;
         color: white;
 
+        pointer-events: none;
         transition: top 1s;
       }
 
@@ -28,6 +29,7 @@ export class Navbar extends LitElement {
       }
 
       feather-icon {
+        pointer-events: auto;
         cursor: pointer;
       }
 
