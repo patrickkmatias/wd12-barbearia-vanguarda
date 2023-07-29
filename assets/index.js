@@ -8,6 +8,7 @@ export * from './components/bolinhas'
 export * from './components/mapa'
 export * from './components/rodape'
 export * from './components/navbar'
+export * from './components/card'
 
 // Seções
 export * from './sections/hero-section'

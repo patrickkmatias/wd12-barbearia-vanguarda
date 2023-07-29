@@ -14,6 +14,11 @@ export function initRouter() {
             component: "a-barbearia-page",
             action: () => import("./pages/a-barbearia-page")
         },
+        {
+            path: "/servicos",
+            component: "servicos-page",
+            action: () => import("./pages/servicos-page")
+        },
     ])
 
     return router
