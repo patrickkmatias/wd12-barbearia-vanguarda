@@ -1,3 +1,8 @@
+/**
+ * Seleciona todas as seções da página atual e
+ * observa quando os elementos com a classe 
+ * ".animate__animated" aparecem na tela.
+ */
 export function observarAnimacoes() {
   const page = document.querySelector("#app :first-child").shadowRoot;
 
