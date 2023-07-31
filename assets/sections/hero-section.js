@@ -1,10 +1,16 @@
 import { LitElement, html, css } from "lit";
+import { animate } from "../styles/animate-style";
 import { section } from "../styles/section-style";
 
 export class HeroSection extends LitElement {
   static styles = [
+    animate,
     section,
     css`
+      :host {
+        --animate-delay: 0.3s;
+      }
+
       section {
         display: flex;
         flex-direction: column;
@@ -13,6 +19,10 @@ export class HeroSection extends LitElement {
       }
 
       span {
+        display: inline-block;
+      }
+
+      .vanguarda {
         color: var(--tom-3);
         font-weight: 900;
       }
@@ -53,6 +63,16 @@ export class HeroSection extends LitElement {
         background-color: transparent;
       }
 
+      @keyframes slideInUp {
+        0% {
+          transform: translate3d(0px, 200%, 0px);
+          visibility: visible;
+        }
+        100% {
+          transform: translateZ(0px);
+        }
+      }
+
       @media (min-width: 768px) {
         app-logo {
           width: 220px;
@@ -73,8 +93,17 @@ export class HeroSection extends LitElement {
       <section>
         <app-titulo>
           <h1>
-            Barbearia <br />
-            <span>Vanguarda</span>
+            <span
+              class="animate__animated animate__fast"
+              data-toggle-class="animate__slideInUp"
+              >Barbearia</span
+            >
+            <br />
+            <span
+              class="vanguarda animate__animated animate__fast animate__delay-1s"
+              data-toggle-class="animate__slideInUp"
+              >Vanguarda</span
+            >
           </h1>
           <app-logo></app-logo>
         </app-titulo>
@@ -105,7 +134,7 @@ export class HeroSection extends LitElement {
           </swiper-container>
         </app-quadro>
       </section>
-      <app-paragrafo>
+      <app-paragrafo class="animate__animated animate__delay-5s" data-toggle-class="animate__fadeIn">
         Obtenha um estilo impecável, do cabelo à barba.
       </app-paragrafo>
     `;
