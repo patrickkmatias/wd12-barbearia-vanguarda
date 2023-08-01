@@ -97,6 +97,8 @@ export class UnidadesSections extends LitElement {
       }
     })
 
+  /* adicionar comentaio */
+
     swiper.initialize()
   }
 
