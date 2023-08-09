@@ -1,3 +1,4 @@
+<h6 align=center><a href="README-EN.md">See in English</a></h6>
 <h1 align=center>Barbearia Vanguarda</h1> 
 
 ![project-barbearia-vanguarda](https://github.com/pMattheew/wd12-barbearia-vanguarda/assets/99044724/d46c53eb-e837-48a0-89df-78d9c847b2be)
