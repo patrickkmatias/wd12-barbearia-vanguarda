@@ -84,6 +84,11 @@ export class HeroSection extends LitElement {
         app-paragrafo {
           display: none;
         }
+
+        app-titulo, app-quadro {
+          width: 80%;
+          margin: 0 auto;
+        }
       }
     `,
   ];

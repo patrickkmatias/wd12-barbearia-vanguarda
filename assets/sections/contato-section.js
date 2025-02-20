@@ -56,7 +56,13 @@ export class ContatoSection extends LitElement {
           }
 
           app-quadro {
-            width: 70vw;
+            width: 70%;
+            height: 60%;
+          }
+
+          video {
+            width: 100%;
+            height: auto;
           }
       }
     `,

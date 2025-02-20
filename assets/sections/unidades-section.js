@@ -69,6 +69,13 @@ export class UnidadesSections extends LitElement {
           height: 400px
         }
       }
+
+      @media (min-width: 1024px) {
+        app-mapa {
+          width: 350px;
+          height: 250px;
+        }
+      }
     `,
   ];
 
@@ -87,9 +94,6 @@ export class UnidadesSections extends LitElement {
           spaceBetween: -275
         },
         1024: {
-          spaceBetween: -575
-        },
-        1368: {
           slidesPerView: 3,
           centeredSlides: true,
           spaceBetween: 0,
